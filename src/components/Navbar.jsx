@@ -24,13 +24,13 @@ const Navbar = () => {
           <p className='text-white text-[18px] font-bold cursor-pointer flex'>Wenda&nbsp;<span className='sm:block hidden'>| JavaScript Mastery</span></p>
         </Link>
         {/* top menu  */}
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (
-            <li className={`${
+            <li key={link.id} className={`${
               active === link.title ? "text-white" : "text-secondary"
             } hover:text-white text-[18px] font-medium cursor-pointer`}
             onClick={() => setActive(nav.title)}>
-              <a href={`{#${link.id}`}>{link.title}</a>
+              <a href={`#${link.id}`}>{link.title}</a>
             </li>
           ))}
         </ul>
@@ -41,12 +41,10 @@ const Navbar = () => {
         <div className={`${!toggle ? "hidden" : "flex"} sm:hidden p-6 black-gradient absolute top-20 right-0 mx-4 my-2min-w[140px]z-10 rounded-xl`}>
           <ul className='list-none flex justify-end items-start flex-col gap-4'>
             {navLinks.map((link) => (
-              <li className={`${
+              <li key={link.id} className={`${
                 active === link.title ? "text-white" : "text-secondary"
               } font-popins font-medium cursor-pointer text-[16px]`}
               onClick={() => {setToggle(!toggle); setActive(nav.title);
-              
-              
               }}>
                 <a href={`{#${link.id}`}>{link.title}</a>
               </li>
