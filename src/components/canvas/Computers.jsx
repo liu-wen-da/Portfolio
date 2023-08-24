@@ -1,7 +1,7 @@
-import { useEffect, Suspense, useState } from "react"
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei"
-import CanvasLoader from "../Loader"
+import React, { Suspense, useEffect, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import CanvasLoader from "../Loader";
 
 const Computers = () => {
   const computer = useGLTF("./desktop_pc/scene.gltf")
@@ -16,7 +16,7 @@ const Computers = () => {
 
 const ComputersCanvas = () => {
   return (
-    <Canvas frameLoop="demand" shadows camera={{position: [20, 3, 5], fov: 25 }} gl={{preserveDrawingBuffer: true}}>
+    <Canvas frameloop="demand" shadows camera={{position: [20, 3, 5], fov: 25 }} gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} maxPolarAngle={Math.PI/2} minPolarAngle={Math.PI/2} />
         {/* the 3d model */}
