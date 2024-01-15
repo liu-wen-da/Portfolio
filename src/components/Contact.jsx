@@ -7,20 +7,55 @@ import { EarthCanvas } from './canvas'
 import { SectionWrapper } from '../hoc'
 import { slideIn } from '../utils/motion'
 
+
 const Contact = () => {
   const formRef = useRef()
-  const [from, setform] = useState({
+  const [form, setform] = useState({
     name: "",
     email: "",
     message: "",
   });
   const [loading, setLoading] = useState(false);
   
-  const handelchange = (e) => {}
+  const handelchange = (e) => {
+    const { target } = e;
+    const { name, value } = target;
+    setform({
+      ...form,
+      [name]: value,
+    })
+  }
   
-  const handelSubmit = (e) => {}
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
 
+    emailjs.send(
+      "service_yc7hm2e", "template_44c94hr", 
+    { from_name: form.name, 
+      to_name: 'Wenda', 
+      from_email: form.email,
+      to_email: '321wenda@gmail.com',
+      message: form.message
+    },
+      "uQJvB9ATg5o0oydwu")
+    
+    .then(() => {
+      setLoading(false);
+      alert('Your message has been sent successfully I will get back to you soon!');
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      })
+    }, (error) => {
+      setLoading(false);
+      console.log(error);
+      alert('Sorry, your message could not be sent.')
+    })
+  }
 
+ 
   return(
     <div className={'xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden'}>
       <motion.div
@@ -47,7 +82,7 @@ const Contact = () => {
               <input
                 type='text'
                 name='name'
-                value={from.name}
+                value={form.name}
                 onChange={handelchange}
                 placeholder='Your Name'
                 className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
@@ -62,7 +97,7 @@ const Contact = () => {
               <input
                 type='email'
                 name='email'
-                value={from.email}
+                value={form.email}
                 onChange={handelchange}
                 placeholder='Your Email'
                 className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
@@ -77,7 +112,7 @@ const Contact = () => {
               <textarea
                 rows={7}
                 name='message'
-                value={from.message}
+                value={form.message}
                 onChange={handelchange}
                 placeholder='Your Message'
                 className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
@@ -93,8 +128,6 @@ const Contact = () => {
         </form>
 
       </motion.div>
-
-      
 
 
     </div>
