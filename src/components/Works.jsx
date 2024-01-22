@@ -78,7 +78,7 @@ const Works = () => {
           </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 flex flex-wrap gap-7 mb-20">
         {projects.map((project, index) => (
           <ProjectCard 
             key={'project-${index}'}
@@ -86,6 +86,17 @@ const Works = () => {
             {...project}
           />
           ))}
+      </div>
+
+      <div className="w-full flex">
+          <motion.p
+            variants={fadeIn("", "", 0.1, 1)}
+            className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
+              {/* https://github.com/liu-wen-da */}
+              There are other projects that I have worked on during my studies at Washington State University check them at my <a href="https://github.com/liu-wen-da" target="_blank" rel="noopener noreferrer" style={{color: 'blue', textDecoration: 'underline'}}>Github</a> profile.
+              {/* help me add a hyperlink with Github as the name */}
+
+          </motion.p>
       </div>
       
     </>

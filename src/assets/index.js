@@ -27,6 +27,9 @@ import lightcast from "./company/lightcast.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import pathways from "./pathways.png";
+import parsing from "./parsing.png";
+import resturant from "./resturant.png";
 
 export {
   logo,
@@ -55,4 +58,7 @@ export {
   tripguide,
   scale,
   lightcast,
+  pathways,
+  parsing,
+  resturant,
 };

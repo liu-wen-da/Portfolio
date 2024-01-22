@@ -21,6 +21,9 @@ import {
     threejs,
     lightcast,
     scale,
+    pathways,
+    parsing,
+    resturant,
   } from "../assets";
   
   export const navLinks = [
@@ -40,20 +43,16 @@ import {
   
   const services = [
     {
-      title: "Web Developer",
+      title: "FullStack Developer",
       icon: web,
-    },
-    {
-      title: "React Native Developer",
-      icon: mobile,
-    },
-    {
-      title: "Backend Developer",
-      icon: backend,
     },
     {
       title: "Software Developer",
       icon: creator,
+    },
+    {
+      title: "Resturant Owner",
+      icon: backend,
     },
   ];
   
@@ -142,86 +141,20 @@ import {
   ];
   
   const testimonials = [
-    {
-      testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
-    },
-    {
-      testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
-    },
-    {
-      testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
-    },
   ];
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "Pathways Moblie",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "The app will streamline the process of selecting a degree from an institution, tracking one’s progress through time for their degree, and making adjustments to any hurdles faced.",
       tags: [
         {
-          name: "react",
+          name: "react-native",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: carrent,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Job IT",
-      description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: jobit,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
+          name: "api",
           color: "green-text-gradient",
         },
         {
@@ -229,8 +162,42 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+      image: pathways,
+      source_code_link: "https://github.com/liu-wen-da/Moblie-App",
+    },
+    {
+      name: "YELP data",
+      description:
+        "This application parses the Yelp data and allow the user to use as a analysis tool that allows users to search for businesses and view their reviews, ratings, and other information.",
+      tags: [
+        {
+          name: "Python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Parsing JSON",
+          color: "green-text-gradient",
+        },
+        {
+          name: "UI",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: parsing,
+      source_code_link: "https://github.com/liu-wen-da/Yelp-data",
+    },
+    {
+      name: "Resturant website",
+      description:
+        "In progress | the picture is a Figma mockup of the website final design will be different.",
+      tags: [
+        {
+          name: "React",
+          color: "blue-text-gradient",
+        },
+      ],
+      image: resturant,
+      source_code_link: "https://github.com/liu-wen-da/Restaurant_Website",
     },
   ];
   
